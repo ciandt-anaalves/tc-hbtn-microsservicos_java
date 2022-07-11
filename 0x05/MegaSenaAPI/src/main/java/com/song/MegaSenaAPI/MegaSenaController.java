@@ -17,10 +17,10 @@ public class MegaSenaController {
 
     @GetMapping("/getNumbers")
     public List<Integer> numerosMegaSena() {
-        return generateListWithRandomIntegerNumbers(6, 1, 60);
+        return generateIntegerListWithRandomNumbers(6, 1, 60);
     }
 
-    private List<Integer> generateListWithRandomIntegerNumbers(int size, int lowerBound, int upperBound) {
+    private List<Integer> generateIntegerListWithRandomNumbers(int size, int lowerBound, int upperBound) {
         Set<Integer> setRandom = new LinkedHashSet<Integer>();
         while (setRandom.size() < size) {
             setRandom.add((int) (Math.random() * (upperBound + 1 - lowerBound) + lowerBound));
