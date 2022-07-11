@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "45081064-473d-4f76-881e-7c42249f104c",
+		"name": "CLIENTES API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21574223"
+	},
+	"item": [
+		{
+			"name": "ADD",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Ataíde de Lima Manhães\",\n    \"idade\": 46,\n    \"email\": \"ataide.manhaes@geradornv.com.br\",\n    \"telefones\": [\n        {\n            \"ddd\": \"(13)\",\n            \"numero\": \"98549-5743\"\n        },\n        {\n            \"ddd\": \"(17)\",\n            \"numero\": \"3541-0763\"\n        }\n    ],\n    \"enderecos\": [\n        {\n            \"logradouro\": \"Rua\",\n            \"endereco\": \"Leonor Leopardi\",\n            \"numero\": \"59-A\",\n            \"bairro\": \"Jardim do Lago\",\n            \"cidade\": \"Jundiaí\",\n            \"estado\": \"SP\"\n        },\n        {\n            \"logradouro\": \"Rua\",\n            \"endereco\": \"Martinho Calsavara\",\n            \"numero\": \"679\",\n            \"bairro\": \"Swift\",\n            \"cidade\": \"Campinas\",\n            \"estado\": \"SP\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api-jpa-h2/addClient",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api-jpa-h2",
+						"addClient"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FIND_ALL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api-jpa-h2/findAllClients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api-jpa-h2",
+						"findAllClients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FIND_BY_ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api-jpa-h2/findClientById/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api-jpa-h2",
+						"findClientById",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE_BY_ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api-jpa-h2/removeClientById/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api-jpa-h2",
+						"removeClientById",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Ataíde de Lima Manhães\",\n    \"idade\": 47,\n    \"email\": \"ataide.manhaes@geradornv.com.br\",\n    \"telefones\": [\n        {\n            \"id\": 3,\n            \"ddd\": \"(13)\",\n            \"numero\": \"98549-5743\"\n        },\n        {\n            \"id\": 4,\n            \"ddd\": \"(15)\",\n            \"numero\": \"97664-5286\"\n        }\n    ],\n    \"enderecos\": [\n        {\n            \"id\": 1,\n            \"logradouro\": \"Rua\",\n            \"endereco\": \"Leonor Leopardi\",\n            \"numero\": \"59-A\",\n            \"bairro\": \"Jardim do Lago\",\n            \"cidade\": \"Jundiaí\",\n            \"estado\": \"SP\"\n        },\n        {\n            \"id\": 2,\n            \"logradouro\": \"Rua\",\n            \"endereco\": \"Vítor Meirelles\",\n            \"numero\": \"113\",\n            \"bairro\": \"Jardim Santa Clara\",\n            \"cidade\": \"Lins\",\n            \"estado\": \"SP\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api-jpa-h2/updateClientById/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api-jpa-h2",
+						"updateClientById",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
