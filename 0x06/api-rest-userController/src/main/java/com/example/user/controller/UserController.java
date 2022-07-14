@@ -16,37 +16,29 @@ public class UserController {
 
     @GetMapping("/user-id/{id}")
     public String findUserById(@PathVariable int id) {
-        String msg = "You have entered valid ID";
-
         if (!(id > 0) || !(id < 100)) {
             throw new UserIdException();
         }
 
-        return msg;
+        return "You have entered valid ID";
     }
 
     @GetMapping("/user-name/{userName}")
     public String findUserByName(@PathVariable String userName) {
-        String msg = "You have entered valid USERNAME";
-
         if (!(userName.length() > 3) || !(userName.length() < 15)) {
             throw new UserNameException();
         }
 
-        return msg;
+        return "You have entered valid USERNAME";
     }
 
     @GetMapping("/user-cpf/{cpf}")
     public String findUserByCPF(@PathVariable String cpf) {
-        String msg = "You have entered valid CPF";
-
-        boolean isCPFValid = isCPF(cpf);
-
         if (!isCPFValid) {
             throw new CPFException();
         }
 
-        return msg;
+        return "You have entered valid CPF";
     }
 
     public static boolean isCPF(String CPF) {
