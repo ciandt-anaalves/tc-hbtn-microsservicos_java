@@ -9,6 +9,7 @@ public class Product implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Long id;
+    private String code;
     private String name;
     private String description;
     private BigDecimal price;
@@ -18,8 +19,9 @@ public class Product implements Serializable {
     public Product() {
     }
 
-    public Product(Long id, String name, String description, BigDecimal price, LocalDateTime createdOne, Boolean status) {
+    public Product(Long id, String code, String name, String description, BigDecimal price, LocalDateTime createdOne, Boolean status) {
         setId(id);
+        setCode(code);
         setName(name);
         setDescription(description);
         setPrice(price);
@@ -33,6 +35,14 @@ public class Product implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public String getName() {
@@ -80,23 +90,24 @@ public class Product implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return Objects.equals(id, product.id) && Objects.equals(name, product.name) && Objects.equals(description, product.description) && Objects.equals(price, product.price) && Objects.equals(createdOne, product.createdOne) && Objects.equals(status, product.status);
+        return Objects.equals(id, product.id) && Objects.equals(code, product.code) && Objects.equals(name, product.name) && Objects.equals(description, product.description) && Objects.equals(price, product.price) && Objects.equals(createdOne, product.createdOne) && Objects.equals(status, product.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, price, createdOne, status);
+        return Objects.hash(id, code, name, description, price, createdOne, status);
     }
 
     @Override
     public String toString() {
         return "Product{" +
-                "id=" + getId() +
-                ", name='" + getName() + '\'' +
-                ", description='" + getDescription() + '\'' +
-                ", price=" + getPrice() +
-                ", createdOne=" + getCreatedOne() +
-                ", status=" + getStatus() +
+                "id=" + id +
+                ", code='" + code + '\'' +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                ", createdOne=" + createdOne +
+                ", status=" + status +
                 '}';
     }
 
